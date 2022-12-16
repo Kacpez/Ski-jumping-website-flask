@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+    <a href="\skoczek\dodaj_skoczka">Dodaj skoczka</a>
+    <a href="\skoczek\edytuj_skoczka">Edytuj skoczka</a>
+    <a href="\skoczek\usun_skoczka">Usuń skoczka</a>
+    <a href="\skoczek\dodaj_skok">Dodaj skok</a>
+    <a href="\skoczek\dodaj_zwyciezce">Dodaj zwycięzce</a>
+    <a href="\skoczek\podziwianie">Zobacz podziwianie</a>
+    <a href="\skoczek\dodaj_podziwianie">Dodaj podziwianie</a>
+</nav>
+<h2>Usuń skoczka</h2>
+<div class="bod"> 
+    <form action="{{ url_for('usun_skoczka') }}" method="post">
+        <div class="select">
+	<select name="nazwa">
+        {% for item in all_data %}
+            <option>{{ item['nazwa'] }}</option>
+    {% endfor %}
+    </select>
+</div>
+	<p><input type="submit" value="USUŃ" class="greet"/></p>
+</form>
+</div>
+{% endblock %}

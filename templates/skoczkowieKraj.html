@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+  <a href="\kraj\dodaj_kraj">Dodaj kraj</a>
+  <a href="\kraj\usun_kraj">Usuń kraj</a>
+  <a href="\kraj\skoczkowie">Zobacz skoczków w krajach</a>
+  <a href="\kraj\skocznie">Zobacz skocznie w krajach</a>
+</nav>
+<h2>Skoczkowie z poszczególnych krajów</h2>
+<div class="bod"> 
+
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>Kraj</th>
+            <th>Skoczkowie z tego kraju</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for (item,item2) in all_data %}
+            <tr>
+                <td>{{ item }}</td>
+                <td> {% for i in item2 %}
+                  {{i}}  &nbsp;&nbsp;
+                  {% endfor %}</td>
+
+            </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+
+</div>
+{% endblock %}

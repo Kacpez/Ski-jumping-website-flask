@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+  <a href="\kraj\dodaj_kraj">Dodaj kraj</a>
+  <a href="\kraj\usun_kraj">Usuń kraj</a>
+  <a href="\kraj\skoczkowie">Zobacz skoczków w krajach</a>
+  <a href="\kraj\skocznie">Zobacz skocznie w krajach</a>
+</nav>
+<h2>Lista krajó w bazie danych</h2>
+<div class="bod"> 
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>Państwo</th>
+            <th>Stolica</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in all_data %}
+            <tr>
+                <td>{{ item['nazwa'] }}</td>
+                <td>{{ item['stolica'] }}</td>
+            </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+
+    </div>
+    {% endblock %}

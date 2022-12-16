@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+  <a href="\skocznia\dodaj_skocznie">Dodaj skocznie</a>
+  <a href="\skocznia\usun_skocznie">Usuń skocznie</a>
+  <a href="\skocznia\statystyki">Zobacz statystyki skoczni</a>
+  <a href="\skocznia\zwyciezcy">Zobacz zwycięzców</a>
+  <a href="\skocznia\skoki">Zobacz skoki</a>
+</nav>
+<h2>Dane z poszczególnych skoczni</h2>
+<div class="bod"> 
+
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Miejscowosc</th>
+            <th>Punkt K</th>
+            <th>Punkt HS</th>
+            <th>Wszystkie skoki</th>
+            <th>Średnia skoków</th>
+            <th>Max skok</th>
+            <th>Min skok</th>
+            <th>Ilość skoków</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in all_data %}
+            <tr>
+                <td>{{ item['a'] }}</td>
+                <td>{{ item['i'] }}</td>
+                <td>{{ item['g'] }}</td>
+                <td> {{ item['h'] }}</td>
+                <td>{{ item['b'] }}</td>
+                <td> {{ item['c'] }}</td>
+                <td> {{ item['d'] }}</td>
+                <td> {{ item['e'] }}</td>
+                <td> {{ item['f'] }}</td>
+            </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+{% endblock %}

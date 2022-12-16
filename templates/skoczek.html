@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+  <a href="\skoczek\dodaj_skoczka">Dodaj skoczka</a>
+  <a href="\skoczek\edytuj_skoczka">Edytuj skoczka</a>
+  <a href="\skoczek\usun_skoczka">Usuń skoczka</a>
+  <a href="\skoczek\dodaj_skok">Dodaj skok</a>
+  <a href="\skoczek\dodaj_zwyciezce">Dodaj zwycięzce</a>
+  <a href="\skoczek\podziwianie">Zobacz podziwianie</a>
+  <a href="\skoczek\dodaj_podziwianie">Dodaj podziwianie</a>
+</nav>
+<h2>Lista skoczków w bazie danych</h2>
+<div class="bod"> 
+  
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>Nazwa skoczka</th>
+            <th>Rok urodzenia</th>
+            <th>Aktualna forma</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in all_data %}
+            <tr>
+                <td>{{ item['nazwa'] }}</td>
+                <td>{{ item['rok_urodzenia'] }}</td>
+                <td>{{ item['aktualna_forma'] }}</td>
+            </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+      {% endblock %}
+

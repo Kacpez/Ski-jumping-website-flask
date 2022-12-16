@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+    <a href="\skocznia\dodaj_skocznie">Dodaj skocznie</a>
+    <a href="\skocznia\usun_skocznie">Usuń skocznie</a>
+    <a href="\skocznia\statystyki">Zobacz statystyki skoczni</a>
+    <a href="\skocznia\zwyciezcy">Zobacz zwycięzców</a>
+    <a href="\skocznia\skoki">Zobacz skoki</a>
+</nav>
+<h2>Usuń skocznie</h2>
+<div class="bod"> 
+    <form action="{{ url_for('usun_skocznie') }}" method="post">
+        <div class="select">
+	<select name="nazwa">
+        {% for item in all_data %}
+            <option>{{ item['nazwa'] }}</option>
+    {% endfor %}
+    </select>
+</div>
+	<p><input type="submit" value="USUŃ" class="greet"/></p>
+</form>
+</div>
+{% endblock %}

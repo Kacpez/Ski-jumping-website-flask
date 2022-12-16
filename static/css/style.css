@@ -1,0 +1,238 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  background-color: rgb(113, 113, 113);
+  }
+  .post{
+    width: 260px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin: 0 20px;
+  }
+  .post:hover .post-s{
+    width: 260px;
+  }
+  .post img {
+    width: 100%;
+    height: 200px;
+  }
+  .post-s{
+    width: 0px;
+    height: 200px;
+    background: rgba(28, 199, 145, 0.71);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.7s ease;
+  }
+  .post-s h2{
+    color: white;
+    font-size: 40px;
+    border: 6px solid white;
+    padding: 10px 30px;
+  }
+  
+  header{
+
+    width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+    align-items: center;
+  background-color:rgb(12, 12, 196);
+  margin-bottom:5px;
+  }
+  header a{
+    text-decoration: none;
+  }
+    h1{
+font-family: sans-serif;
+font-weight:500;
+	text-align: center;
+	color:white;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+h2{
+  font-family: sans-serif;
+  font-weight:300;
+    text-align: center;
+    color:white;
+    font-size: 20px;
+    font-weight: 300;
+    
+  }
+.bod{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20;
+  margin: 20;
+}
+.linki{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20;
+  margin: 20;
+}
+
+
+.content-table {
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 1.2em;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #0501d7;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #3b3b3bfe;
+  background-color:#3b3b3bfe;
+  color: #ffffff;
+  text-align: center;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #040211e1;
+  color: #ffffff;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #0501d7;
+}
+
+
+
+
+nav{
+
+  width: 70vw;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 25px;
+  margin-bottom: 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+nav a{
+  position: relative;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+  color: #bdbdbd;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+nav a:after{
+  content: "";
+  position: absolute;
+  background-color: #3cff3c;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+nav a:hover{
+  color: #ffffff;
+}
+nav a:hover:after{
+  width: 100%;
+}
+
+input {
+  width: 270px;
+  margin: 1px 1px;
+  height: 50px;
+  border: solid 5px #ffffff;
+  border-radius: 10px;
+  font-family: Shanti;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border: solid 5px #00FFCE;
+}
+
+.greet {
+    background-color: rgb(36, 151, 183);
+    border:  none;
+    width:  280px;
+    color: white;
+}
+
+.greet:hover {
+    background-color: rgb(27, 199, 21);
+}
+
+
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  background: #5c6664;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color:#fff;
+  cursor:pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: .25em;
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+}
+.select:hover::after {
+  color: #23b499;
+}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+<a href="\skocznia\dodaj_skocznie">Dodaj skocznie</a>
+<a href="\skocznia\usun_skocznie">Usuń skocznie</a>
+<a href="\skocznia\statystyki">Zobacz statystyki skoczni</a>
+<a href="\skocznia\zwyciezcy">Zobacz zwycięzców</a>
+<a href="\skocznia\skoki">Zobacz skoki</a>
+
+</nav>
+<h2>Dodaj skocznie</h2>
+<div class="bod"> 
+    <form action="{{ url_for('dodaj_skocznie') }}" method="post">
+
+	<p><input type="text" name="nazwa" placeholder="Nazwa skoczni" required/></p>
+
+    <p><input type="text" name="miejsce" placeholder="Miejscowość" required/></p>
+    <h2>Kraj w którym leży skocznia:</h2>
+    <div class="select">
+        <select name="panstwo">
+            {% for item in all_data %}
+                <option>{{ item['nazwa'] }}</option>
+        {% endfor %}
+        </select>
+    </div>
+
+    <p><input type="number" step="0.5" name="punktK" placeholder="Punkt K" required/></p>
+
+    <p><input type="number" step="0.5" name="punktHS"  placeholder="Punkt HS" required /></p>
+
+    <p><input type="number" step="0.5" name="rekord" placeholder="Rekord" required/></p>
+	<p><input type="submit" value="DODAJ" class="greet"/></p>
+</form>
+</div>
+{% endblock %}

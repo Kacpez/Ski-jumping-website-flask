@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+    <a href="\skoczek\dodaj_skoczka">Dodaj skoczka</a>
+    <a href="\skoczek\edytuj_skoczka">Edytuj skoczka</a>
+    <a href="\skoczek\usun_skoczka">Usuń skoczka</a>
+    <a href="\skoczek\dodaj_skok">Dodaj skok</a>
+    <a href="\skoczek\dodaj_zwyciezce">Dodaj zwycięzce</a>
+    <a href="\skoczek\podziwianie">Zobacz podziwianie</a>
+    <a href="\skoczek\dodaj_podziwianie">Dodaj podziwianie</a>
+</nav>
+<h2>Dodaj skok skoczka na skoczni narciarskiej</h2>
+<div class="bod"> 
+
+    <form action="{{ url_for('dodaj_skok') }}" method="post">
+        <div class="select">
+        <select name="nazwa1">
+        {% for item in all_data %}
+            <option>{{ item['nazwa'] }}</option>
+    {% endfor %}
+</select>
+</div>
+<h2>SKOCZYŁ NA SKOCZNI</h2>
+<div class="select">
+    <select name="nazwa2">
+        {% for item in all_data2 %}
+            <option>{{ item['nazwa'] }}</option>
+    {% endfor %}
+</select>
+</div>
+<h2>NA ODLEGŁOŚĆ</h2>
+<p><input type="number" step="0.5" name="skok" required/></p>
+	<p><input type="submit" value="DODAJ SKOK" class="greet"/></p>
+</form>
+</div>
+{% endblock %}

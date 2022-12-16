@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+<a href="\kraj\dodaj_kraj">Dodaj kraj</a>
+<a href="\kraj\usun_kraj">Usuń kraj</a>
+<a href="\kraj\skoczkowie">Zobacz skoczków w krajach</a>
+<a href="\kraj\skocznie">Zobacz skocznie w krajach</a>
+
+</nav>
+<h2>Dodaj kraj</h2>
+<div class="bod"> 
+    <form action="{{ url_for('dodaj_kraj') }}" method="post">
+	<p><input type="text" name="nazwa"  placeholder="Nazwa państwa" required/></p>
+    <p><input type="text" name="stolica" placeholder="Stolica" required/></p>
+	<p><input type="submit" value="DODAJ" class="greet"/></p>
+</form>
+</div>
+{% endblock %}

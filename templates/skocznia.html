@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% block content %}
+<nav>
+  <a href="\skocznia\dodaj_skocznie">Dodaj skocznie</a>
+  <a href="\skocznia\usun_skocznie">Usuń skocznie</a>
+  <a href="\skocznia\statystyki">Zobacz statystyki skoczni</a>
+  <a href="\skocznia\zwyciezcy">Zobacz zwycięzców</a>
+  <a href="\skocznia\skoki">Zobacz skoki</a>
+  
+</nav>
+<h2>Lista skocznii narciarskich w bazie dancych</h2>
+<div class="bod"> 
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Miejscowoaść</th>
+            <th>Punkt K</th>
+            <th>Punkt HS</th>
+            <th>Rekord skoczni</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in all_data %}
+            <tr>
+                <td>{{ item['nazwa'] }}</td>
+                <td>{{ item['miejscowosc'] }}</td>
+                <td>{{ item['punktK'] }}</td>
+                <td>{{ item['punktHS'] }}</td>
+                <td>{{ item['rekord'] }}</td>
+            </tr>
+        {% endfor %}
+          
+        </tbody>
+      </table>
+    </div>
+    {% endblock %}

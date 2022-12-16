@@ -1,0 +1,35 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="linki">
+<p></p>
+  </div>
+<div class="bod"> 
+<a href="/skoczek">
+  <div class="post">
+    <img src="{{ url_for('static', filename='images/skoczek.jpg') }}" alt="">
+    <div class="post-s">
+      <h2>
+  Skoczkowie</h2>
+  </div>
+  </div>
+  </a>
+  <a href="/skocznia">
+  <div class="post">
+      <img src="{{ url_for('static', filename='images/skocznie.jpg') }}" alt="">
+      <div class="post-s">
+        <h2>
+    Skocznie</h2>
+    </div>
+    </div>
+  </a>
+  <a href="/kraj">
+    <div class="post">
+      <img src="{{ url_for('static', filename='images/kraje.jpg') }}" alt="">
+      <div class="post-s">
+        <h2>
+    Kraje</h2>
+    </div>
+    </div>
+  </a>
+</div>
+{% endblock %}
