@@ -17,6 +17,16 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+@app.route("/skoczek", methods=['GET','POST'])
+def skoczek():
+	q1="""
+    MATCH (p:Skoczek) RETURN p  
+    """
+	results=session.run(q1)
+	print(results)
+	data=results.data()
+	wynik=[row["p"] for row in data]
+	return render_template("skoczek.html",all_data=wynik)
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
